@@ -1,165 +1,94 @@
-:root {
-    --color-bg: rgb(
-      255,
-      255,
-      255
-    ); /** this is a color in red, green, and blue values (each from 0 to 255) **/
-    --color-text: #000000;
-    --color-primary: #3DC7F1;
-    --color-secondary: #E8F8FD;
-    --font-family-body: "Proxima-Nova", sans-serif;
-    --padding: 1rem;
-    --margin: 1rem;
-  }
-  
-  /* Basic page style resets, building on the ones boostrap does */
-  body {
-    font-family: var(--font-family-body);
-    color: var(--color-text);
-    background-color: var(--color-bg);
-  }
-  
-  header {
-    margin: var(--margin);
-  }
-  
-  main {
-    margin: var(--margin);
-  }
-  
-  /* base typography */
-  h1, h2, h3, h4, h5, h6 {
-    font-weight: 300;
-    margin-bottom: 1.3rem;
-    margin-top: 0;
-    color: var(--color-text)
-  }
-  
-  h1 {
-    font-size: 2.5rem;
-    font-variant: all-small-caps;
-  }
-  
-  h2 {
-    font-size: 1.25rem;
-    margin-bottom: .5rem;
-  }
-  
-  h3 {
-  
-    font-size: .8rem;
-    font-weight: bold;
-  }
-  
-  h4 {
-    font-size: .8rem;
-  }
-  
-  a,
-  a:hover {
-    color: --color-secondary;
-  }
-  
-  /* Header styles */
-  
-  p {
-    font-size: .9rem;
-    margin: var(--margin);
-  /*   padding: var(--padding); */
-  /*   background-color: var(--color-bg); */
-    box-shadow: none;
-  }
-  
-  header p {
-    font-size: 1.5rem;
-  }
-  
-  header p.small {
-    font-size: 1rem;
-  }
-  
-  /* main body, scrollytelling part styles */
-  article {
-   padding: 0 1rem;
-   max-width: 30rem;
-  /*  -moz-transform: translateY(-45%);
-   -webkit-transform: translateY(-45%);
-   transform: translateY(-45%); */
-  }
-  
-  figure {
-    position: absolute; 
-    left: 0;
-    top: 0;
-    bottom: auto;
-    z-index: 0; 
-    margin: var(--margin);
-  }
-  
-  img {
-    position: absolute;
-    z-index: 0;
-  /*   width: 65%; */
-    right: 0;
-  /*   top: 10%; */
-  }
-  
-  
-  /* when at bottom of "sticky" area section, remove fixed position */
-  figure.is-bottom {
-      bottom: 0;
-      top: auto;
-  }
-  
-  /* Footer styles */
-  
-  footer {
-    background-color: var(--color-secondary);
-    padding: 5rem 0 1rem 0;
-    text-align: center;
-    font-size: 1rem;
-  }
-  
-  footer a {
-    color: var(--color-bg);
-  }
-  
-  footer a:hover {
-    color: var(--color-bg);
-  }
-  
-  footer a:visited {
-    color: var(--color-bg);
-  }
-  
-  #scrolly {
+.intro {
+    max-width: 500px;
+    padding: 20px;
+}
+
+.outro {
+    max-width: 500px;
+    padding: 20px;
+    margin-bottom: 200px
+}
+
+p {
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+/* all scrolling positions set to relative */
+#scroll {
     position: relative;
-  }
-  
-  .step {
+}
+
+#chart {
+    background-color: blanchedalmond;
+}
+
+/* set scroll graphic to absolute and lock in the position */
+.scroll__graphic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: auto;
+    width: 100%;
+    z-index: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+/* remain fixed when inside the "sticky" area */
+.scroll__graphic.is-fixed {
+    position: sticky;
+}
+
+/* when at bottom of "sticky" area section, remove fixed position */
+.scroll__graphic.is-bottom {
+    bottom: 0;
+    top: auto;
+}
+
+.scroll__text {
+    padding: 0 1rem;
+    max-width: 30rem;
+}
+
+.step {
     opacity: 0.5;
+    padding: 1rem;
     background-color: lightgray;
     border: 1px solid gray;
     max-width: 800px;
-    max-height: 800px;
-    margin: var(--margin);
-    padding: var(--padding);
-  }
-  
-  .step.is-active {
+    height: 300px;
+    margin: 10px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.step.is-active {
     opacity: 1;
     z-index: 500;
-  }
-  
-  .step:last-child {
-    margin-bottom: 0;
-  }
-  
-  .container {
-    margin: 0;
-  }
-  
-  .intro {
-    margin: var(--margin);
-  }
-  
+}
+
+.scroll__graphic #chart {
+    position: absolute;
+    z-index: 0;
+    right: 1rem;
+    top: 50%;
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.step p {
+    margin: 0 auto;
+    height: 300px;
+    background-color: white;
+}
+
+@media only screen and (min-width: 700px) {
+
+    .scroll__graphic #chart,
+    .scroll__graphic {
+        z-index: -100;
+    }
+}
