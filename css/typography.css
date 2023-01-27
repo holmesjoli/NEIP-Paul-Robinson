@@ -1,7 +1,7 @@
 :root {
     --color-bg: rgb(255, 255, 255); /** this is a color in red, green, and blue values (each from 0 to 255) **/
     --color-text: #000000;
-    --color-primary: #3DC7F1;
+    --color-primary: #9fe3f8;
     --color-secondary: #E8F8FD;
     --font-family-body: "Proxima-Nova", sans-serif;
     --padding: 1rem;
