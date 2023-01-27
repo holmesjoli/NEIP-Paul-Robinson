@@ -1,0 +1,67 @@
+:root {
+    --color-bg: rgb(255, 255, 255); /** this is a color in red, green, and blue values (each from 0 to 255) **/
+    --color-text: #000000;
+    --color-primary: #3DC7F1;
+    --color-secondary: #E8F8FD;
+    --font-family-body: "Proxima-Nova", sans-serif;
+    --padding: 1rem;
+    --margin: 1rem;
+}
+
+body {
+    font-family: var(--font-family-body);
+}
+
+/* base typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+    margin-bottom: 1.3rem;
+    margin-top: 0;
+    color: var(--color-text);
+}
+
+h1 {
+    font-size: 2.7rem;
+    font-variant: all-small-caps;
+    /* font-family:Georgia, 'Times New Roman', Times, serif; */
+    margin-bottom: .5rem;
+    font-family: "bigmoore", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h2 {
+    font-size: 1.24rem;
+    margin-bottom: 1.6rem;
+}
+
+h3 {
+    font-size: .8rem;
+    margin-bottom: .5rem;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: .8rem;
+}
+
+a,
+a:hover {
+    color: --color-secondary;
+}
+
+/* Header styles */
+
+p {
+    font-size: .9rem;
+    margin: var(--margin);
+    box-shadow: none;
+}
+
+header p {
+    font-size: 1.5rem;
+}
+
+header p.small {
+    font-size: 1rem;
+}

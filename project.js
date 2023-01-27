@@ -1,93 +1,181 @@
-// One trick to organizing code is to put related functions inside of an object,
-// so they are under the same "namespace". This helps maek readable code that is
-// easier to maintain in the long term.
-// TODO: replace use of `document.getElementByXXX` with `d3.select` so it is more readable
+// using d3 for convenience, and storing a selected elements
+var container = d3.select('#scroll');
+var graphic = container.select('.scroll__graphic');
+var chart = graphic.select('#chart');
+var text = container.select('.scroll__text');
+var step = text.selectAll('.step');
 
-/* globals scrollama */
+// define some global vars
+var chartWidth;
+var chartHeight;
 
-const Project = {};
-
-
-Project.scrolling = {
-
-
-  // these hold references to helpers and rendered page elements (filled in by `initialize`)
-  scroller: undefined, // an instance of scrollama
-  steps: undefined, // an array of all the step elements
-
-  // a list of the backdrop images, ordered so they match the `step` elements on the page
-  backdrops: [
-    { 'src': 'https://cdn.glitch.global/60a947a3-a0d4-473b-a51a-ef7120e2f598/webcoding.jpeg?v=1673897542123',
-      'credit': 'https://zapier.com/blog/learn-html-css/'
-    },
-    { 'src': 'https://cdn.glitch.global/60a947a3-a0d4-473b-a51a-ef7120e2f598/puppies.jpg?v=1673897599766',
-      'credit': 'https://www.wisdompanel.com/en-us/blog/sibling-genetics-in-dogs'
-    },
-    { 'src': 'https://cdn.glitch.global/60a947a3-a0d4-473b-a51a-ef7120e2f598/kitten-vs-puppy.jpeg?v=1673897648888',
-      'credit': 'https://www.marketwatch.com/story/owning-a-cat-vs-owning-a-dog-which-pet-makes-better-financial-sense-11649445375',
-    },
-  ],
-
-  // set up the webpage to scroll
-  initialize: () => {
-    // grab the elements on the page that are related to the scrolling
-    const scrollWrapper = document.getElementById("scrolly");
-    Project.scrolling.figure = scrollWrapper.getElementsByTagName("figure")[0];
-    const article = scrollWrapper.getElementsByTagName('article')[0];
-    Project.scrolling.steps = Array.from(article.getElementsByClassName("step")); // convert from HTMLCollection to Array for ease of use later
-    // intialize the scrollama helper
-    Project.scrolling.scroller = scrollama();
-    Project.scrolling.scroller
-      .setup({
-        step: "#scrolly article .step",
-        offset: 0.95,
-        debug: false
-      })
-      .onStepEnter(Project.scrolling.handleStepEnter)
-      .onStepExit(Project.scrolling.handleStepExit);
-    // setup the default view to be the right size and include first step
-    Project.scrolling.handleResize();
-    Project.scrolling.setBackdropImage(0); // remember: 0 means the first item in an array
-  },
-
-  // call this to switch the background image
-  setBackdropImage: (index) => {
-    const image = Project.scrolling.figure.getElementsByTagName("img")[0];
-    image.src = Project.scrolling.backdrops[index].src;
-    //image.classList.add = 'fade-in';
-    // TODO: make this caption text a link
-    // document.getElementsByTagName("figcaption")[0].innerHTML = Project.scrolling.backdrops[index].credit;
-  },
-
-  // called by scrollama when the step is being entered
-  handleStepEnter: (stepInfo) => { 
-    const figure = document.getElementsByTagName('figure');
-    figure.className = "is-fixed";
-       // console.log(figure.className)
-    
-    const step = document.getElementsByClassName('step');
-    for (let s of step) {
-      step.className = stepInfo.index === +s.getAttribute("data-step") ? "is-active": "inactive";
+let data = [];
+function updateData() {
+    data = [];
+    for (let i = 0; i < 5; i++) {
+        data.push(Math.random() * 800);
     }
-    // and switch the background image to match the step content
-    Project.scrolling.setBackdropImage(stepInfo.index);
-  },
+}
+var svg = chart.append('svg')
 
-  // called by scrollama when moving out of a step
-  handleStepExit: (stepInfo) => {
-    // we don't make any transitions when a step scrolls out of view
-  },
 
-  // called to get content to be the right size to fit the device
-  handleResize: () => {
-    const stepH = Math.floor(window.innerHeight * 1); // update step heights
-    Project.scrolling.steps.forEach(step => step.style.height = stepH + "px")
-    const figureHeight = window.innerHeight;
-    const figureMarginTop = 0;
-    Project.scrolling.figure.style.height = figureHeight + "px";
-    Project.scrolling.figure.style.top = figureMarginTop + "px";
-    Project.scrolling.figure.getElementsByClassName("wrapper")[0].style.height = figureHeight + "px";
-    Project.scrolling.scroller.resize(); // tell scrollama to update new element dimensions
-  },
+const newData = [
+    { x: 4, size: 9 },
+    { x: 1, size: 8 },
+    { x: 2, size: 1 },
+    { x: 9, size: 3 },
+    { x: 2, size: 2 }
+]
 
-};
+// initialize the scrollama
+var scroller = scrollama();
+
+// resize function to set dimensions on load and on page resize
+function handleResize() {
+
+    if (window.innerHeight >= 700) {
+
+        // 1. update height of step elements for breathing room between steps
+        // changing the multiplier here will define how much white space between steps
+        var stepHeight = Math.floor(window.innerHeight * 0.7);
+        step.style('height', stepHeight + 'px');
+
+        // 2. update height of graphic element
+        var bodyWidth = d3.select('body').node().offsetWidth;
+        graphic.style('height', window.innerHeight + 'px');
+
+        // 3. update width of chart by subtracting from text width
+        var chartMargin = 32;
+        var textWidth = text.node().offsetWidth;
+
+        chartWidth = graphic.node().offsetWidth - textWidth - chartMargin; // left
+
+
+    } else {
+        graphic.style('height', window.innerHeight + 'px');
+        chartWidth = graphic.node().offsetWidth;
+
+        chartHeight = Math.floor(window.innerHeight / 2);
+    }
+
+    // make the height 1/2 of viewport
+    chartHeight = Math.floor(window.innerHeight / 2);
+
+    chart
+        .style('width', chartWidth + 'px')
+        .style('height', chartHeight + 'px');
+
+    // 4. tell scrollama to update new element dimensions
+    scroller.resize();
+}
+
+// scrollama event handlers
+function handleStepEnter(response) {
+    // sticky the graphic
+    graphic.classed('is-fixed', true);
+    graphic.classed('is-bottom', false);
+
+    // fade in current step
+    step.classed('is-active', function (d, i) {
+        console.log(i)
+        return i === response.index;
+    })
+
+    console.log(response.index);
+
+    if (response.index === 2) {
+        updateChartStep3()
+    } else {
+        updateData();
+        updateChart();
+    }
+
+    // console.log(response)
+}
+
+// optional to view precise percent progress on callback
+function handleProgress(response) {
+    console.log(response)
+}
+
+// kick-off code to run once on load
+function init() {
+    // 1. call a resize on load to update width/height/position of elements
+    handleResize();
+
+    // 2. setup the scrollama instance
+    // 3. bind scrollama event handlers (this can be chained like below)
+    scroller
+        .setup({
+            container: '#scroll', // our outermost scrollytelling element
+            graphic: '.scroll__graphic', // the graphic
+            text: '.scroll__text', // the step container
+            step: '.scroll__text .step', // the step elements
+            offset: 0.5, // set the trigger to be 1/2 way down screen
+            // debug: true, // display the trigger offset for testing
+            progress: false
+        })
+        // .onStepProgress(handleProgress)
+        .onStepEnter(handleStepEnter);
+
+    // setup resize event
+    window.addEventListener('resize', handleResize);
+
+    updateData();
+    initChart();
+}
+
+// start it up
+init();
+
+/////////////////////////////////
+// SOME D3 CODE FOR OUR GRAPHIC //
+/////////////////////////////////
+
+function initChart() {
+    // define the width/height of SVG
+    svg.attr('width', chartWidth).attr('height', chartHeight);
+
+    // draw the circles
+    svg.selectAll('circle')
+        .data(data)
+        .join('circle')
+        .attr('cy', 100)
+        .attr('r', 40)
+        .attr('fill', 'purple')
+        .attr('opacity', 0.7)
+        .attr('cx', function (d) {
+            return d;
+        });
+}
+
+function updateChart() {
+    svg
+        .selectAll('circle')
+        .data(data)
+        .join('circle')
+        .transition()
+        .duration(2000)
+        .ease(d3.easeExpInOut)
+        .attr("r", 40)
+        .attr('cx', function (d) {
+            return d;
+        });
+}
+
+function updateChartStep3() {
+    svg
+        .selectAll('circle')
+        .data(newData)
+        .join('circle')
+        .transition()
+        .duration(2000)
+        .ease(d3.easeExpInOut)
+        .attr('r',function (d) {
+            return d.size;
+        })
+        .attr('cx', function (d) {
+            return d.x*10;
+        });
+}
+

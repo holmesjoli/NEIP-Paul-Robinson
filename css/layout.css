@@ -1,0 +1,108 @@
+html, body {
+    margin: 0;
+}
+
+/* .Main {
+    margin: 20px;
+} */
+
+p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* all scrolling positions set to relative */
+#scroll {
+    position: relative;
+}
+
+#chart {
+    background-color: blanchedalmond;
+}
+
+/* set scroll graphic to absolute and lock in the position */
+.scroll__graphic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: auto;
+    width: 100%;
+    z-index: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+/* remain fixed when inside the "sticky" area */
+.scroll__graphic.is-fixed {
+    position: sticky;
+}
+
+/* when at bottom of "sticky" area section, remove fixed position */
+.scroll__graphic.is-bottom {
+    bottom: 0;
+    top: auto;
+}
+
+.scroll__text {
+    padding: 0 1rem;
+    max-width: 30rem;
+    -moz-transform: translateY(-25%);
+    -webkit-transform: translateY(-25%);
+    transform: translateY(-25%);
+}
+
+.step {
+    opacity: 0.5;
+    padding: 1rem;
+    border: 1px solid #D7D7D7;
+    background-color: var(--color-secondary);
+    max-width: 800px;
+    margin: 10px;
+}
+
+.step.is-active {
+    opacity: 1;
+    z-index: 500;
+}
+
+.scroll__graphic #chart {
+    position: absolute;
+    z-index: 0;
+    right: 1rem;
+    top: 50%;
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.step p {
+    margin: 0 auto;
+    margin-bottom: 1rem;
+}
+/* 
+.intro {
+    max-width: 700px;
+} */
+
+
+header,
+.intro {
+    padding: 1rem;
+    margin: 10px;
+}
+
+footer {
+    background-color: var(--color-secondary);
+    padding: 5rem 0 1rem 0;
+    text-align: center;
+    font-size: 1rem;
+}
+
+@media only screen and (min-width: 700px) {
+
+    .scroll__graphic #chart,
+    .scroll__graphic {
+        z-index: -100;
+    }
+}
