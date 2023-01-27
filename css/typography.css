@@ -21,17 +21,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 2.7rem;
     font-variant: all-small-caps;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: .5rem;
 }
 
 h2 {
-    font-size: 1.25rem;
-    margin-bottom: .5rem;
+    font-size: 1.24rem;
+    margin-bottom: 1.6rem;
 }
 
 h3 {
     font-size: .8rem;
+    margin-bottom: .5rem;
     font-weight: bold;
 }
 
