@@ -2,10 +2,6 @@ html, body {
     margin: 0;
 }
 
-/* .Main {
-    margin: 20px;
-} */
-
 p {
     margin: 0;
     line-height: 1.5;
@@ -33,6 +29,7 @@ p {
     transform: translate3d(0, 0, 0);
 }
 
+
 /* remain fixed when inside the "sticky" area */
 .scroll__graphic.is-fixed {
     position: sticky;
@@ -50,6 +47,9 @@ p {
     -moz-transform: translateY(-25%);
     -webkit-transform: translateY(-25%);
     transform: translateY(-25%);
+    /* transform: translateY(-45%);
+    -moz-transform: translateY(-45%);
+    -webkit-transform: translateY(-45%); */
 }
 
 .step {
@@ -71,20 +71,18 @@ p {
     z-index: 0;
     right: 1rem;
     top: 50%;
-    -moz-transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
+    -moz-transform: translateY(-75%);
+    -webkit-transform: translateY(-75%);
+    transform: translateY(-75%);
+    /* -moz-transform: translateY(25%);
+    -webkit-transform: translateY(25%);
+    transform: translateY(25%); */
 }
 
 .step p {
     margin: 0 auto;
     margin-bottom: 1rem;
 }
-/* 
-.intro {
-    max-width: 700px;
-} */
-
 
 header,
 .intro {
@@ -99,10 +97,79 @@ footer {
     font-size: 1rem;
 }
 
-@media only screen and (min-width: 700px) {
+@media screen and (max-width: 800px) {
 
-    .scroll__graphic #chart,
+    body {
+        padding: 0;
+    }
+
+    p {
+        line-height: 1.2;
+        font-size: 10pt;
+    }
+
+    .intro,
+    .outro {
+        display: block;
+    }
+
+    .step {
+        padding: 0;
+        margin-top: 20px;
+    }
+
+    .quote {
+        /* flex-direction: column; */
+        font-size: 9pt;
+    }
+
+    .scroll__graphic.is-fixed {
+        position: fixed;
+        bottom: 0;
+        top: auto;
+        z-index: 100;
+    }
+
     .scroll__graphic {
+        position: fixed; 
+        bottom: 0;
+        top: auto;
+    }
+
+    .scroll__graphic #chart {
+        right: 0;
+        bottom: 0;
+        top: auto;
+        -moz-transform: translateY(25%);
+        -webkit-transform: translateY(25%);
+        transform: translateY(25%); 
+    }
+
+    .scroll__text {
+        -moz-transform: translateY(0%);
+        -webkit-transform: translateY(0%);
+        transform: translateY(0%);
+        z-index: -1;
+    }
+
+    .step {
+        z-index: -2;
+        max-height: 60%;
+    }
+
+    .outro {
+        -moz-transform: translateY(-15%);
+        -webkit-transform: translateY(-15%);
+        transform: translateY(-15%);
+        margin-bottom: 300px
+    }
+
+    #chart {
+        background-color: #FAFBFC;
+        z-index: 600;
+    }
+
+    .step.is-active {
         z-index: -100;
     }
 }

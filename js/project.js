@@ -77,7 +77,7 @@ function handleStepEnter(response) {
 
     // fade in current step
     step.classed('is-active', function (d, i) {
-        console.log(i)
+        // console.log(i)
         return i === response.index;
     })
 
