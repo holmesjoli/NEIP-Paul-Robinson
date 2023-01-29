@@ -23,7 +23,6 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     font-size: 2.7rem;
     font-variant: all-small-caps;
-    /* font-family:Georgia, 'Times New Roman', Times, serif; */
     margin-bottom: .5rem;
     font-family: "bigmoore", serif;
     font-weight: 400;
@@ -32,18 +31,19 @@ h1 {
 
 h2 {
     font-size: 1.24rem;
-    margin-bottom: 1.6rem;
+    margin-bottom: 1.8rem;
 }
 
 h3 {
-    font-size: .8rem;
-    margin-bottom: .5rem;
+    font-size: .9rem;
+    margin-bottom: .7rem;
     font-weight: bold;
 }
 
 h4 {
-    font-size: .8rem;
+    font-size: .85rem;
     margin-bottom: 0;
+    line-height: 1.4;
 }
 
 a,
@@ -54,7 +54,7 @@ a:hover {
 /* Header styles */
 
 p {
-    font-size: .9rem;
+    font-size: 1rem;
     margin: var(--margin);
     box-shadow: none;
 }
@@ -79,6 +79,7 @@ header p.small {
     }
     h3, h4 {
         font-size: .75rem;
+        line-height: 1.3;
     }
     p {
         font-size: .8rem;
