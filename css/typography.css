@@ -43,6 +43,7 @@ h3 {
 
 h4 {
     font-size: .8rem;
+    margin-bottom: 0;
 }
 
 a,
@@ -64,4 +65,22 @@ header p {
 
 header p.small {
     font-size: 1rem;
+}
+
+@media screen and (max-width: 800px) {
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+    h3, h4 {
+        font-size: .75rem;
+    }
+    p {
+        font-size: .8rem;
+    }
 }

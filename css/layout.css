@@ -113,6 +113,10 @@ footer {
         display: block;
     }
 
+    .intro {
+        padding-top: 0;
+    }
+
     .step {
         padding: 0;
         margin-top: 20px;
