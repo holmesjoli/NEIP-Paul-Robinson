@@ -19,8 +19,6 @@ p {
     top: 0;
     right: 0;
     bottom: auto;
-    /* width: 100%; */
-    /* z-index: 0; */
 }
 
 /* remain fixed when inside the "sticky" area */
@@ -70,10 +68,6 @@ p {
     padding-top: 3rem;
 }
 
-/* .outro {
-    max-width: 66vw;
-} */
-
 #media {
     display: block;
     margin-left: auto; 
@@ -83,7 +77,6 @@ p {
     text-align: right;
     margin-left: auto; 
     margin-right: 0;
-    /* max-width: 300px; */
 }
 
 a,
@@ -94,7 +87,6 @@ a:hover {
 
 
 footer {
-    /* background-color: var(--color-tertiary); */
     text-align: center;
     font-size: 1rem;
     min-height: 100px;
@@ -126,6 +118,9 @@ footer {
 
     .scroll__text {
         padding: 0;
+        -moz-transform: translateY(-2%);
+        -webkit-transform: translateY(-2%);
+        transform: translateY(-2%);
     }
 
     .scroll__graphic.is-fixed {
@@ -137,7 +132,7 @@ footer {
     }
 
     .scoll__graphic__container {
-       background-color: white;
-         padding: .5rem 1rem;
+        background-color: white;
+        padding: .5rem 1rem;
     }
 }

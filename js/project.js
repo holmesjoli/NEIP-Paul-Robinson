@@ -11,7 +11,6 @@ var scroller = scrollama();
 
 // resize function to set dimensions on load and on page resize
 function handleResize() {
-    // 4. tell scrollama to update new element dimensions
     scroller.resize();
 }
 
@@ -26,6 +25,12 @@ function handleStepEnter(response) {
     step.classed('is-active', function (d, i) {
         return i === response.index;
     })
+
+
+    console.log(response)
+    // if (response.index === 0) {
+    //     graphic.classed('is-fixed', false);
+    // }
 
     const backdrops = [
         { 'src': './assets/images/P2740071.JPG',
@@ -48,6 +53,13 @@ function handleStepEnter(response) {
     media.src = backdrops[response.index].src;
     media.alt = backdrops[response.index].alt;
     caption.textContent = backdrops[response.index].caption;
+}
+
+function handleStepExit(response) {
+
+    if (response.index === 0) {
+        graphic.classed('is-fixed', false);
+    }
 }
 
 // optional to view precise percent progress on callback
@@ -74,8 +86,7 @@ function init() {
         })
         // .onStepProgress(handleProgress)
         .onStepEnter(handleStepEnter)
-    
-    // setBackdropImage(0);
+        .onStepExit(handleStepExit)
 
     // setup resize event
     window.addEventListener('resize', handleResize);
