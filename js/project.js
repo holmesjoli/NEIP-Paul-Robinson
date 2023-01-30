@@ -56,10 +56,9 @@ function handleStepEnter(response) {
 }
 
 function handleStepExit(response) {
-
-    if (response.index === 0) {
-        graphic.classed('is-fixed', false);
-    }
+    // if (response.index === 0) {
+    //     graphic.classed('is-fixed', false);
+    // }
 }
 
 // optional to view precise percent progress on callback
