@@ -18,8 +18,9 @@ function handleResize() {
 function handleStepEnter(response) {
 
     // sticky the graphic
-    graphic.classed('is-fixed', true);
-    graphic.classed('is-bottom', false);
+    if (response.index === 0) {
+        graphic.classed('is-fixed', true);
+    }
 
     // fade in current step
     step.classed('is-active', function (d, i) {
@@ -27,7 +28,7 @@ function handleStepEnter(response) {
     })
 
 
-    console.log(response)
+    // console.log(response)
     // if (response.index === 0) {
     //     graphic.classed('is-fixed', false);
     // }
@@ -59,6 +60,12 @@ function handleStepExit(response) {
     // if (response.index === 0) {
     //     graphic.classed('is-fixed', false);
     // }
+
+    window.onscroll = function() {
+        if ((window.innerHeight + Math.ceil(window.pageYOffset)) >= document.body.offsetHeight) {
+            graphic.classed('is-fixed', false);
+        }
+      }
 }
 
 // optional to view precise percent progress on callback
