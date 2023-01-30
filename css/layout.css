@@ -42,9 +42,9 @@ p {
 .scroll__text {
     padding: 0 1rem;
     max-width: 27rem;
-    -moz-transform: translateY(-35%);
-    -webkit-transform: translateY(-35%);
-    transform: translateY(-35%);
+    -moz-transform: translateY(-30%);
+    -webkit-transform: translateY(-30%);
+    transform: translateY(-30%);
 }
 
 .step {
