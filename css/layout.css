@@ -19,8 +19,8 @@ p {
     top: 0;
     right: 0;
     bottom: auto;
-    width: 100%;
-    z-index: 0;
+    /* width: 100%; */
+    /* z-index: 0; */
 }
 
 /* remain fixed when inside the "sticky" area */
@@ -55,16 +55,6 @@ p {
     opacity: 1;
     z-index: 500;
 }
-
-/* .scroll__graphic #chart {
-    position: absolute;
-    z-index: 0;
-    right: 1rem;
-    top: 50%;
-    -moz-transform: translateY(-75%);
-    -webkit-transform: translateY(-75%);
-    transform: translateY(-75%);
-} */
 
 .step p {
     margin: 0 auto;
@@ -141,15 +131,6 @@ footer {
         position: fixed; 
         bottom: 0;
         top: auto;
-    }
-
-    .scroll__graphic #chart {
-        right: 0;
-        bottom: 0;
-        top: auto;
-        -moz-transform: translateY(25%);
-        -webkit-transform: translateY(25%);
-        transform: translateY(25%); 
     }
 
     .scroll__text {
