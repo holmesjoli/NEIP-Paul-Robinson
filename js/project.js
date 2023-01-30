@@ -37,12 +37,12 @@ function handleStepEnter(response) {
           'alt': 'A front view of the two-story family home where Robinson lives. The house is white with horizontal siding. Red shutters and a red deck give the house a nice accent color.'
         },
         { 'src': './assets/images/P2740091.JPG',
-          'caption': 'Paul in his Mini Cooper.',
+          'caption': 'Paul in his silver Mini Cooper.',
           'alt': 'Paul in his silver Mini Cooper. His hand is on his knee and he is turned towards the camera with a partial smile.'
         },
         { 'src': './assets/images/P2740085.JPG',
-          'caption': 'A side-view of the family home.',
-          'alt': 'A side view of the family home. A BBQ can be seen at the end of the porch..'
+          'caption': 'A side-view of the Robinson family home.',
+          'alt': 'A side view of the Robinson family home. A BBQ can be seen at the end of the porch..'
         },
     ]
     media.src = backdrops[response.index].src;
@@ -53,20 +53,6 @@ function handleStepEnter(response) {
 // optional to view precise percent progress on callback
 function handleProgress(response) {
     console.log(response)
-}
-
-function setBackdropImage(index) {
-
-    const backdrops = [
-        { 'src': './assets/images/P2740099.JPG',
-        },
-        { 'src': './assets/images/P2740091.JPG',
-        },
-        { 'src': 'https://cdn.glitch.global/60a947a3-a0d4-473b-a51a-ef7120e2f598/kitten-vs-puppy.jpeg?v=1673897648888',
-        },
-      ]
-
-    media.src = backdrops[index].src;
 }
 
 // kick-off code to run once on load
