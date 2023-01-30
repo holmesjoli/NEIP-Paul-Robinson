@@ -27,16 +27,10 @@ function handleStepEnter(response) {
         return i === response.index;
     })
 
-
-    // console.log(response)
-    // if (response.index === 0) {
-    //     graphic.classed('is-fixed', false);
-    // }
-
     const backdrops = [
         { 'src': './assets/images/P2740071.JPG',
-          'caption': 'Family picture wall at the Robinson house. Paul\'s sister Patricia, niece, and grand-niece are in the center.',
-          'alt': 'Family picture wall at the Robinson house. Paul\'s sister Patricia, niece, and grand-niece are in the center.'
+          'caption': 'Family picture wall at the Robinson house. The central photo is Paul\'s niece, left, grand-niece, center, and sister, right. The other photos on the wall are his nephews and nieces.',
+          'alt': 'Family picture wall at the Robinson house. The central photo is Paul\'s niece, left, grand-niece, center, and sister, right. The other photos on the wall are his nephews and nieces.'
         },
         { 'src': './assets/images/P2740099.JPG',
           'caption': 'A front view of the family home where Robinson lives with his nieces and nephews.',
