@@ -1,6 +1,6 @@
 html, body {
     margin: 0;
-    background-color: var(--color-secondary);
+    background: linear-gradient(var(--color-secondary), #5191C0);
 }
 
 p {
@@ -11,10 +11,6 @@ p {
 /* all scrolling positions set to relative */
 #scroll {
     position: relative;
-}
-
-#chart {
-    background-color: blanchedalmond;
 }
 
 /* set scroll graphic to absolute and lock in the position */
@@ -60,7 +56,7 @@ p {
     z-index: 500;
 }
 
-.scroll__graphic #chart {
+/* .scroll__graphic #chart {
     position: absolute;
     z-index: 0;
     right: 1rem;
@@ -68,10 +64,7 @@ p {
     -moz-transform: translateY(-75%);
     -webkit-transform: translateY(-75%);
     transform: translateY(-75%);
-    /* -moz-transform: translateY(25%);
-    -webkit-transform: translateY(25%);
-    transform: translateY(25%); */
-}
+} */
 
 .step p {
     margin: 0 auto;
@@ -92,12 +85,14 @@ p {
 }
 
 a,
-a:visited {
+a:visited,
+a:hover {
     color: var(--color-primary)
 }
 
+
 footer {
-    background-color: var(--color-tertiary);
+    /* background-color: var(--color-tertiary); */
     text-align: center;
     font-size: 1rem;
     min-height: 100px;
@@ -174,11 +169,6 @@ footer {
         -webkit-transform: translateY(-15%);
         transform: translateY(-15%);
         margin-bottom: 300px
-    }
-
-    #chart {
-        background-color: #FAFBFC;
-        z-index: 600;
     }
 
     .step.is-active {

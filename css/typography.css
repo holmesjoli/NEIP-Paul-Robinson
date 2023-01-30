@@ -56,11 +56,6 @@ h5 {
     font-size: .85rem;
 }
 
-a,
-a:hover {
-    color: --color-secondary;
-}
-
 /* Header styles */
 
 p {
