@@ -23,15 +23,17 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     font-size: 2.7rem;
     font-variant: all-small-caps;
-    margin-bottom: .5rem;
+    margin-bottom: .9rem;
     font-family: "bigmoore", serif;
     font-weight: 400;
     font-style: normal;
+    line-height: 1.1;
 }
 
 h2 {
     font-size: 1.24rem;
     margin-bottom: 1.8rem;
+    font-style: italic;
 }
 
 h3 {

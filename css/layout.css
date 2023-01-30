@@ -81,7 +81,7 @@ p {
     margin-bottom: 1rem;
 }
 
-.container {
+.container-md {
     background-color: white;
     padding: 0 1.5rem;
 }
@@ -98,10 +98,6 @@ a,
 a:visited {
     color: var(--color-primary)
 }
-
-/* header {
-    background-color: #B8D2E5;
-} */
 
 footer {
     background-color: #B8D2E5;
