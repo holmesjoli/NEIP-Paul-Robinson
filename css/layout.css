@@ -93,8 +93,13 @@ header,
     max-width: 66vw;
 }
 
+a,
+a:visited {
+    color: var(--color-primary)
+}
+
 footer {
-    background-color: var(--color-secondary);
+    background-color: #B8D2E5;
     padding: 5rem 0 1rem 0;
     text-align: center;
     font-size: 1rem;
