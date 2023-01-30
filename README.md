@@ -1,6 +1,8 @@
-TODO: update README
+# New England Innocence Project - Paul Robinson
 
-# Git command line cheat sheet
+This repository contains the story and code for a scrolly-telling story designed for the New England Innocence Project.
+
+## Git command line cheat sheet
 
 * `git add (name of file)`
 * `git commit -m "commit message"`
