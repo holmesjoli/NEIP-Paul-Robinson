@@ -29,7 +29,6 @@ p {
     transform: translate3d(0, 0, 0);
 }
 
-
 /* remain fixed when inside the "sticky" area */
 .scroll__graphic.is-fixed {
     position: sticky;
@@ -81,14 +80,10 @@ p {
     margin-bottom: 1rem;
 }
 
-header,
-.intro,
-.outro {
-    padding: 1rem;
-    margin: 10px;
+.row {
+    margin-top: 3rem;
 }
 
-.intro,
 .outro {
     max-width: 66vw;
 }
@@ -97,6 +92,10 @@ a,
 a:visited {
     color: var(--color-primary)
 }
+
+/* header {
+    background-color: #B8D2E5;
+} */
 
 footer {
     background-color: #B8D2E5;

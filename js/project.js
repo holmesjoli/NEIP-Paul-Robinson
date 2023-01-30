@@ -81,8 +81,6 @@ function handleStepEnter(response) {
         return i === response.index;
     })
 
-    console.log(response.index);
-
     if (response.index === 2) {
         updateChartStep3()
     } else {

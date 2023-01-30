@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <meta name="description" content="Scrollama + Bootstrap Boilerplate - sample webpage to remix and build on for learners">
-        <meta name="keywords" content="digital storytelling, scrollytelling, learning, examples">
+        <meta name="description" content="Paul Robinson's story">
+        <meta name="keywords" content="incarceration, freedom, justice">
         <meta name="author" content="Joli Holmes & Jovi Dai">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
@@ -21,6 +21,8 @@
         <title>NEIP Profile - Paul Robinson</title>
         <script src="https://d3js.org/d3.v7.min.js"></script>
         <script src="https://unpkg.com/scrollama"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
         <link rel="stylesheet" type="text/css" href="./css/typography.css">
         <link rel="stylesheet" type="text/css" href="./css/layout.css">
         <link rel="stylesheet" href="https://use.typekit.net/fno2nob.css">
@@ -28,21 +30,34 @@
     <body>
         <header>
             <div class="container"> <!-- tell bootstrap we're going to use a grid -->
-            <div class="row"> <!-- a horizontal set of content -->
-                <div class="col-lg-8">  <!-- half-width & centered on desktop/tablet, full width on mobile --> 
-                    <h1>Reset ... catchier title</h1>
-                    <h2>Paul's story about life after incarceration ... catchier subtitle  </h2>
-                    <h3>Written by Joli Holmes and Jovi Dai</h3>    		
-                    <h4>This story documents Paul Robinsons's life after release from prison. It was written in January, 2023, approximately eight months after Paul's release where he served 52 years. He maintains his innocence and is working with the <a href="https://www.newenglandinnocence.org/" target="_blank">New England Innocence Project (NEIP)</a> to overturn his conviction in his fight for justice. Paul was 75 years old when he was released and celebrated his first birthday in over 50 years with family this past December.</h4>
+                <div class="row"> <!-- a horizontal set of content -->
+                    <div class="col-lg-8">  <!-- half-width & centered on desktop/tablet, full width on mobile --> 
+                        <h1>Reset ... catchier title</h1>
+                        <h2>Paul's story about life after incarceration ... catchier subtitle  </h2>
+                        <h3>Written by Joli Holmes and Jovi Dai</h3>    		
+                        <h4>This story documents Paul Robinsons's life after release from prison. It was written in January, 2023, approximately eight months after Paul's release where he served 52 years. He maintains his innocence and is working with the <a href="https://www.newenglandinnocence.org/" target="_blank">New England Innocence Project (NEIP)</a> to overturn his conviction in his fight for justice. Paul was 75 years old when he was released and celebrated his first birthday in over 50 years with family this past December.</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex. Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in elementum tellus.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex. Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in elementum tellus.
+                        </p>
+                    </div>
+                    <div class="col-lg-4">
+                        <img class="col-lg-12" src="./assets/images/P2740080.JPG">
+                        <h5>Paul holds an art piece that says <em>'Fighting for Freedom to the death, because it's your life they took.'</em></h5>
+                    </div>
                 </div>
             </div>
-            </div>
         </header>
-        <div class="intro">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex. Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in elementum tellus.
-               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex. Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in elementum tellus.
-            </p>
-        </div>
+        <!-- <div class="container">
+            <div class="intro row">
+                <p  class="col-lg-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex. Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in elementum tellus.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex. Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in elementum tellus.
+                </p>
+                <div class="col-lg-4">
+                    <img class="col-lg-12" src="./assets/images/P2740080.JPG">
+                    <h5>Paul holds an art piece that says <em>'Fighting for Freedom to the death, because it's your life they took.'</em></h5>
+                </div>
+            </div>
+        </div> -->
         <section id='scroll'>
             <!--  graphic container  -->
             <div class='scroll__graphic'>
@@ -98,8 +113,10 @@
                 </div>
             </div>
         </section>
-        <div class="outro">
-            <h3>Many thanks to Paul for graciously sharing his story. We hope that this story honors Paul and his fight for justice.</h3>
+        <div class="container">
+            <div class="outro row">
+                <h3>Many thanks to Paul for graciously sharing his story. We hope that this story honors Paul and his fight for justice.</h3>
+            </div>
         </div>
         <footer>
             <div class="container">  <!-- tell bootstrap we're going to use a grid -->
