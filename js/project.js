@@ -4,8 +4,8 @@ var graphic = container.select('.scroll__graphic');
 var text = container.select('.scroll__text');
 var step = text.selectAll('.step');
 var media = document.getElementById('media');
+var caption = document.getElementById('caption');
 
-console.log(media)
 // initialize the scrollama
 var scroller = scrollama();
 
@@ -14,7 +14,6 @@ function handleResize() {
     // 4. tell scrollama to update new element dimensions
     scroller.resize();
 }
-
 
 // scrollama event handlers
 function handleStepEnter(response) {
@@ -48,6 +47,7 @@ function handleStepEnter(response) {
     ]
     media.src = backdrops[response.index].src;
     media.alt = backdrops[response.index].alt;
+    caption.textContent = backdrops[response.index].caption;
 }
 
 // optional to view precise percent progress on callback

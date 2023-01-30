@@ -36,7 +36,7 @@ p {
 
 .scroll__text {
     padding: 0 1rem;
-    max-width: 30rem;
+    max-width: 27rem;
     -moz-transform: translateY(-30%);
     -webkit-transform: translateY(-30%);
     transform: translateY(-30%);
@@ -72,6 +72,18 @@ p {
 
 .outro {
     max-width: 66vw;
+}
+
+#media {
+    display: block;
+    margin-left: auto; 
+}
+
+#caption {
+    text-align: right;
+    margin-left: auto; 
+    margin-right: 0;
+    /* max-width: 300px; */
 }
 
 a,
