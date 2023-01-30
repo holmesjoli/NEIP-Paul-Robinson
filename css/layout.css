@@ -25,10 +25,6 @@ p {
     bottom: auto;
     width: 100%;
     z-index: 0;
-    -moz-transform: translateY(-10%);
-    -webkit-transform: translateY(-10%);
-    transform: translateY(-10%);
-    margin-top: 3rem;
 }
 
 /* remain fixed when inside the "sticky" area */
@@ -45,9 +41,9 @@ p {
 .scroll__text {
     padding: 0 1rem;
     max-width: 30rem;
-    -moz-transform: translateY(-40%);
-    -webkit-transform: translateY(-40%);
-    transform: translateY(-40%);
+    -moz-transform: translateY(-30%);
+    -webkit-transform: translateY(-30%);
+    transform: translateY(-30%);
 }
 
 .step {
@@ -102,9 +98,10 @@ a:visited {
 
 footer {
     background-color: var(--color-tertiary);
-    padding: 5rem 0 1rem 0;
     text-align: center;
     font-size: 1rem;
+    min-height: 100px;
+    padding-top: 2rem;
 }
 
 @media screen and (max-width: 800px) {

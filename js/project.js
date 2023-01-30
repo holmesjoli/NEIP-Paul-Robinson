@@ -30,12 +30,16 @@ function handleStepEnter(response) {
 
     const backdrops = [
         { 'src': './assets/images/P2740071.JPG',
+          'caption': 'Family picture wall at the Robinson house. Paul\'s sister Patricia, niece, and grand-niece are in the center.'
         },
         { 'src': './assets/images/P2740099.JPG',
+          'caption': 'A front view of the family home where Robinson now lives with his nieces and nephews.'
         },
         { 'src': './assets/images/P2740091.JPG',
+          'caption': 'A side view of the family home.'
         },
         { 'src': './assets/images/P2740085.JPG',
+          'caption': 'Paul in his Mini Cooper.'
         },
     ]
     media.src = backdrops[response.index].src;
