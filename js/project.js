@@ -29,6 +29,8 @@ function handleStepEnter(response) {
     })
 
     const backdrops = [
+        { 'src': './assets/images/P2740071.JPG',
+        },
         { 'src': './assets/images/P2740099.JPG',
         },
         { 'src': './assets/images/P2740091.JPG',
@@ -36,10 +38,7 @@ function handleStepEnter(response) {
         { 'src': './assets/images/P2740085.JPG',
         },
     ]
-
-    if (response.index >= 1) {
-        media.src = backdrops[response.index].src;
-    }
+    media.src = backdrops[response.index].src;
 }
 
 // optional to view precise percent progress on callback
