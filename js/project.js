@@ -30,19 +30,24 @@ function handleStepEnter(response) {
 
     const backdrops = [
         { 'src': './assets/images/P2740071.JPG',
-          'caption': 'Family picture wall at the Robinson house. Paul\'s sister Patricia, niece, and grand-niece are in the center.'
+          'caption': 'Family picture wall at the Robinson house. Paul\'s sister Patricia, niece, and grand-niece are in the center.',
+          'alt': 'Family picture wall at the Robinson house. Paul\'s sister Patricia, niece, and grand-niece are in the center.'
         },
         { 'src': './assets/images/P2740099.JPG',
-          'caption': 'A front view of the family home where Robinson now lives with his nieces and nephews.'
+          'caption': 'A front view of the family home where Robinson lives with his nieces and nephews.',
+          'alt': 'A front view of the two-story family home where Robinson lives. The house is white with horizontal siding. Red shutters and a red deck give the house a nice accent color.'
         },
         { 'src': './assets/images/P2740091.JPG',
-          'caption': 'A side view of the family home.'
+          'caption': 'Paul in his Mini Cooper.',
+          'alt': 'Paul in his silver Mini Cooper. His hand is on his knee and he is turned towards the camera with a partial smile.'
         },
         { 'src': './assets/images/P2740085.JPG',
-          'caption': 'Paul in his Mini Cooper.'
+          'caption': 'A side-view of the family home.',
+          'alt': 'A side view of the family home. A BBQ can be seen at the end of the porch..'
         },
     ]
     media.src = backdrops[response.index].src;
+    media.alt = backdrops[response.index].alt;
 }
 
 // optional to view precise percent progress on callback
