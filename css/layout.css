@@ -1,5 +1,6 @@
 html, body {
     margin: 0;
+    background-color: var(--color-secondary);
 }
 
 p {
@@ -80,8 +81,13 @@ p {
     margin-bottom: 1rem;
 }
 
+.container {
+    background-color: white;
+    padding: 0 1.5rem;
+}
+
 .row {
-    margin-top: 3rem;
+    padding-top: 3rem;
 }
 
 .outro {
