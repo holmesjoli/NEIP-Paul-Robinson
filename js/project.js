@@ -33,8 +33,8 @@ function handleStepEnter(response) {
           'alt': 'A front view of the two-story family home where Robinson lives. The house is white with horizontal siding. Red shutters and a red deck give the house a nice accent color.'
         },
         { 'src': './assets/images/P2740071.JPG',
-         'caption': 'Family picture wall at the Robinson house. The central photo is Paul\'s niece, left, grand-niece, center, and sister, right. The other photos on the wall are his nephews and nieces.',
-         'alt': 'Family picture wall at the Robinson house. The central photo is Paul\'s niece, left, grand-niece, center, and sister, right. The other photos on the wall are his nephews and nieces.'
+         'caption': 'Family picture wall at the Robinson house of three to four generations of Robinsons. The central photo is Paul\'s niece, left, grand-niece, center, and sister, right. The other photos on the wall are his nephews and nieces.',
+         'alt': 'Family picture wall at the Robinson house of three to four generations of Robinsons. The central photo is Paul\'s niece, left, grand-niece, center, and sister, right. The other photos on the wall are his nephews and nieces.'
         },
         { 'src': './assets/images/P2740091.JPG',
           'caption': 'Paul in his silver Mini Cooper.',
